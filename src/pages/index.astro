@@ -1,4 +1,7 @@
 ---
+import Greeting from "../components/Greeting.jsx";
+import Hello from "../components/Hello.jsx";
+import TimeComponent from "../components/Tardis.jsx";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Home";
@@ -6,4 +9,19 @@ const pageTitle = "Home";
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
+  <Greeting
+    client:load
+    messages={[
+      "Hi",
+      "Hello",
+      "Howdy",
+      "Hey there",
+      "Hej",
+      "Hallo",
+      "Hola",
+      "Habari",
+    ]}
+  />
+  <!-- <Hello client:only="react" /> -->
+  <!-- <TimeComponent client:only="react" /> -->
 </BaseLayout>
