@@ -32,7 +32,7 @@ const { pageTitle } = Astro.props;
 
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (any) => {
-          if (!any) {
+          if (!user) {
             window.netlifyIdentity.on("login", () => {
               document.location.href = "/admin/";
             });
